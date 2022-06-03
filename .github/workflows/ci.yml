@@ -13,8 +13,5 @@ jobs:
           version-file: lib/foo/version.rb
           command: github-release
 
-      - uses: actions/checkout@v2
-        # if: ${{ steps.release.outputs.pr }}
-
       - run: |
           echo PR: ${{ steps.release.outputs.pr }}
