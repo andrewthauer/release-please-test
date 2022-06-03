@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0](https://github.com/andrewthauer/release-please-test/compare/v0.3.0...v0.4.0) (2022-06-03)
+
+
+### Features
+
+* barbar ([c281526](https://github.com/andrewthauer/release-please-test/commit/c28152684a9ccac618c86632d999fa63a3384eca))
+* foobar ([19ca184](https://github.com/andrewthauer/release-please-test/commit/19ca184186b31a276546619ad1c1cd8efa68cf8c))
+* now we go ([8c5114a](https://github.com/andrewthauer/release-please-test/commit/8c5114af229577af4faccd227ccca75d825f4454))
+
+
+### Bug Fixes
+
+* no required label ([32de279](https://github.com/andrewthauer/release-please-test/commit/32de279eb8235db2db90aeec542df8a79d533f2d))
+* use pr number ([b7ff8fe](https://github.com/andrewthauer/release-please-test/commit/b7ff8fe229d55dbfa3c76415cf1096a4ed584503))
+
 ## [0.3.0](https://github.com/andrewthauer/release-please-test/compare/v0.2.0...v0.3.0) (2022-06-03)
 
 
