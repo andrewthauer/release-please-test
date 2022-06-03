@@ -1,4 +1,3 @@
 module Foo
-  puts 'Foo'
-  puts 'Bar'
+  puts 'Foobar'
 end
