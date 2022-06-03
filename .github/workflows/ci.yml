@@ -25,5 +25,5 @@ jobs:
           # merge-method: rebase
           # do-not-merge-labels: never-merge
           required-labels: automerge
-          pull-request: ${{ steps.release.outputs.pr }}
+          pull-request: ${{ steps.release.outputs.pr.number }}
           # dry-run: true
