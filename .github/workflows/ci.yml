@@ -2,7 +2,7 @@ on:
   push:
 
 jobs:
-  release_pr:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
