@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  release:
+  release-please:
     runs-on: ubuntu-latest
     # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
@@ -16,4 +16,4 @@ jobs:
           # command: github-release
 
       - run: |
-          echo PR: ${{ steps.release.outputs.pr }}
+          echo PR: "${{ steps.release.outputs.pr }}"
