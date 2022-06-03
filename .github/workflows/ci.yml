@@ -13,7 +13,7 @@ jobs:
           release-type: ruby
           package-name: foo
           version-file: lib/foo/version.rb
-          command: github-release
+          # command: github-release
 
       - run: |
           echo PR: ${{ steps.release.outputs.pr }}
