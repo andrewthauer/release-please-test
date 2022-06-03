@@ -15,5 +15,15 @@ jobs:
           version-file: lib/foo/version.rb
           # command: github-release
 
-      - run: |
-          echo PR: "${{ steps.release.outputs.pr }}"
+      # - run: |
+      #     echo PR: "${{ steps.release.outputs.pr }}"
+
+      - uses: reitermarkus/automerge@v2
+        if: "${{ steps.release.outputs.pr }}"
+        with:
+          # token: ${{ secrets.MY_GITHUB_TOKEN }}
+          # merge-method: rebase
+          # do-not-merge-labels: never-merge
+          required-labels: automerge
+          pull-request: ${{ steps.release.outputs.pr }}
+          # dry-run: true
