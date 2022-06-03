@@ -1,0 +1,12 @@
+on:
+  push:
+
+jobs:
+  release_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: ruby
+          package-name: foo
+          version-file: lib/foo/version.rb
