@@ -4,6 +4,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
@@ -11,3 +12,9 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
           command: github-release
+
+      - uses: actions/checkout@v2
+        # if: ${{ steps.release.outputs.pr }}
+
+      - run: |
+          echo PR: ${{ steps.release.outputs.pr }}
