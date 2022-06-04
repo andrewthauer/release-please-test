@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/andrewthauer/release-please-test/compare/v0.4.0...v0.5.0) (2022-06-04)
+
+
+### Features
+
+* foobar ([380c500](https://github.com/andrewthauer/release-please-test/commit/380c500e6e93f0681d9a6b0a5fa88756d8f7a312))
+* release foo please ([ebf96ad](https://github.com/andrewthauer/release-please-test/commit/ebf96adb8e726dd50cbc2da56c5dafe845f53457))
+
 ## [0.4.0](https://github.com/andrewthauer/release-please-test/compare/v0.3.0...v0.4.0) (2022-06-03)
 
 
