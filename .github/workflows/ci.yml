@@ -18,12 +18,19 @@ jobs:
       # - run: |
       #     echo PR: "${{ steps.release.outputs.pr }}"
 
-      - uses: reitermarkus/automerge@v2
+      # - uses: reitermarkus/automerge@v2
+      #   if: "${{ steps.release.outputs.pr }}"
+      #   with:
+      #     # token: ${{ secrets.MY_GITHUB_TOKEN }}
+      #     # merge-method: rebase
+      #     # do-not-merge-labels: never-merge
+      #     # required-labels: automerge
+      #     pull-request: ${{ steps.release.outputs.pr.number }}
+      #     # dry-run: true
+
+      - uses: pascalgn/automerge-action@v0.15.3
+        id: automerge
         if: "${{ steps.release.outputs.pr }}"
-        with:
-          # token: ${{ secrets.MY_GITHUB_TOKEN }}
-          # merge-method: rebase
-          # do-not-merge-labels: never-merge
-          # required-labels: automerge
-          pull-request: ${{ steps.release.outputs.pr.number }}
-          # dry-run: true
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          PULL_REQUEST: "${{ steps.release.outputs.pr.number }}"
