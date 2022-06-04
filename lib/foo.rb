@@ -1,3 +1,3 @@
 module Foo
-  puts 'Foobar'
+  puts 'foobar'
 end
