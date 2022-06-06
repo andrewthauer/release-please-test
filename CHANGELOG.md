@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.0](https://github.com/andrewthauer/release-please-test/compare/v0.6.0...v0.7.0) (2022-06-06)
+
+
+### Features
+
+* release 18 test ([b78b137](https://github.com/andrewthauer/release-please-test/commit/b78b1370eaba0425668512f03e2c1d12b83acc93))
+* release 19 test ([01fdfff](https://github.com/andrewthauer/release-please-test/commit/01fdfff262fb5c617c0322074311a350bc0c68ae))
+
 ## [0.6.0](https://github.com/andrewthauer/release-please-test/compare/v0.5.0...v0.6.0) (2022-06-04)
 
 
