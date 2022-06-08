@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/andrewthauer/release-please-test/compare/v0.7.0...v0.8.0) (2022-06-08)
+
+
+### Features
+
+* cut a new release 20 ([8e755ce](https://github.com/andrewthauer/release-please-test/commit/8e755ce4b7fde2cba968bfb361716feb873ce728))
+
 ## [0.7.0](https://github.com/andrewthauer/release-please-test/compare/v0.6.0...v0.7.0) (2022-06-06)
 
 
