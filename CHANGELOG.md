@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/andrewthauer/release-please-test/compare/v0.9.0...v0.10.0) (2022-06-17)
+
+
+### Features
+
+* foo release foo ([36ec27a](https://github.com/andrewthauer/release-please-test/commit/36ec27a69d78ca53d1315674f6d9b32824235d36))
+
 ## [0.9.0](https://github.com/andrewthauer/release-please-test/compare/v0.8.0...v0.9.0) (2022-06-08)
 
 
