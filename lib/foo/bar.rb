@@ -4,8 +4,5 @@ module Foo
     puts 'foobar'
     puts 'foobar'
     puts 'foobar'
-    puts 'foobar'
-    puts 'foobar'
-    puts 'foobar'
   end
 end
