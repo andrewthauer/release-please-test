@@ -23,6 +23,8 @@ jobs:
           script: |
             const { PR_NUMBER, TAG_NAME } = process.env
 
+            console.log(PR_NUMBER, TAG_NAME)
+
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
