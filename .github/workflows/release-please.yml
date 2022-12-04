@@ -21,11 +21,19 @@ jobs:
           PR_NUMBER: ${{ steps.release.outputs.pr.number }}
         with:
           script: |
-            github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: process.env.PR_NUMBER,
-            })
+            console.log('${{ steps.release.outputs }}')
+
+      # - uses: actions/github-script@v6
+      #   if: "${{ steps.release.outputs.pr }}"
+      #   env:
+      #     PR_NUMBER: ${{ steps.release.outputs.pr.number }}
+      #   with:
+      #     script: |
+      #       github.rest.pulls.merge({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         pull_number: process.env.PR_NUMBER,
+      #       })
 
       # - uses: actions/github-script@v6
       #   with:
