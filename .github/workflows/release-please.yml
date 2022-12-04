@@ -21,7 +21,7 @@ jobs:
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: '${{ steps.release.outputs.pr.number }}',
+              pull_number: ${{ steps.release.outputs.pr.number }},
               commit_title: 'chore(release): ${{ steps.release.outputs.tag_name }} [skip ci]',
             })
 
