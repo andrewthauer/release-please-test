@@ -15,21 +15,21 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
 
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ["automerge"]
-            })
+      # - uses: actions/github-script@v6
+      #   with:
+      #     script: |
+      #       github.rest.issues.addLabels({
+      #         issue_number: context.issue.number,
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         labels: ["automerge"]
+      #       })
 
       - uses: reitermarkus/automerge@v2
         if: "${{ steps.release.outputs.pr }}"
         with:
           token: ${{ secrets.GHA_TOKEN }}
-          required-labels: automerge
+          # required-labels: automerge
           pull-request: ${{ steps.release.outputs.pr.number }}
 
       # - uses: "pascalgn/automerge-action@v0.15.5"
