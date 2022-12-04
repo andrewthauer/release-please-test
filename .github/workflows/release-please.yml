@@ -15,16 +15,15 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
 
-      - uses: actions/github-script@v6
-        if: "${{ steps.release.outputs.pr }}"
+      - if: "${{ steps.release.outputs.pr }}"
         # env:
         #   PR_NUMBER: ${{ steps.release.outputs.pr.number }}
-        with:
-          script: |
-            console.log(`${{ steps.release.outputs.pr.number }}`)
-            console.log(`${{ steps.release.outputs.pr.title }}`)
-            console.log(`${{ steps.release.outputs.pr.labels }}`)
-            console.log(`${{ steps.release.outputs.pr.sha }}`)
+        run: |
+          echo "PR: ${{ steps.release.outputs.pr }}"
+          echo "Number: ${{ steps.release.outputs.pr.number }}"
+          echo "Title: ${{ steps.release.outputs.pr.title }}"
+          echo "Labels: `${{ steps.release.outputs.pr.labels }}"
+          echo "SHA: ${{ steps.release.outputs.pr.sha }}"
 
       # - uses: actions/github-script@v6
       #   if: "${{ steps.release.outputs.pr }}"
