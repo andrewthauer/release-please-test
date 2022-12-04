@@ -19,11 +19,7 @@ jobs:
         # env:
         #   PR_NUMBER: ${{ steps.release.outputs.pr.number }}
         run: |
-          echo "PR: ${{ steps.release.outputs.pr }}"
           echo "Number: ${{ steps.release.outputs.pr.number }}"
-          echo "Title: ${{ steps.release.outputs.pr.title }}"
-          echo "Labels: `${{ steps.release.outputs.pr.labels }}"
-          echo "SHA: ${{ steps.release.outputs.pr.sha }}"
 
       # - uses: actions/github-script@v6
       #   if: "${{ steps.release.outputs.pr }}"
