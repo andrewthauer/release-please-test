@@ -21,12 +21,13 @@ jobs:
           TAG_NAME: ${{ steps.release.outputs.tag_name }}
         with:
           script: |
-            const { PR_NUMBER, TAG_NAME } = process.env;
+            const { PR_NUMBER, TAG_NAME } = process.env
+
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${PR_NUMBER},
-              commit_title: 'chore(release): ${TAG_NAME} [skip ci]',
+              commit_title: 'chore(release): ${TAG_NAME} [skip ci]'
             });
 
       # - uses: actions/github-script@v6
