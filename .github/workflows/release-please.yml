@@ -18,15 +18,13 @@ jobs:
       - uses: actions/github-script@v6
         if: "${{ steps.release.outputs.pr }}"
         env:
-          PR_NUMBER: "${{ steps.release.outputs.pr.number }}"
-          TAG_NAME: "${{ steps.release.outputs.tag_name }}"
+          PR_NUMBER: ${{ steps.release.outputs.pr.number }}
         with:
           script: |
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: process.env.PR_NUMBER,
-              commit_title: `chore(release): ${process.env.TAG_NAME} [skip ci]`
             })
 
       # - uses: actions/github-script@v6
