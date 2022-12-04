@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: "${{ secrets.GHA_TOKEN }}"
+          release-type: ruby
+          package-name: foo
+          version-file: lib/foo/version.rb
+
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["automerge"]
+            })
+
+      - uses: reitermarkus/automerge@v2
+        if: "${{ steps.release.outputs.pr }}"
+        with:
+          token: ${{ secrets.GHA_TOKEN }}
+          required-labels: automerge
+          pull-request: ${{ steps.release.outputs.pr.number }}
+
+      # - uses: "pascalgn/automerge-action@v0.15.5"
+      #   name: automerge
+      #   id: automerge
+      #   env:
+      #     GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
+      #     MERGE_LABELS: automerge
