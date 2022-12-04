@@ -15,6 +15,16 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
 
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: '${{ steps.release.outputs.pr.number }}',
+              commit_title: 'chore(release): ${{ steps.release.outputs.tag_name }} [skip ci]',
+            })
+
       # - uses: actions/github-script@v6
       #   with:
       #     script: |
@@ -25,16 +35,9 @@ jobs:
       #         labels: ["automerge"]
       #       })
 
-      - uses: reitermarkus/automerge@v2
-        if: "${{ steps.release.outputs.pr }}"
-        with:
-          token: ${{ secrets.GHA_TOKEN }}
-          # required-labels: automerge
-          pull-request: ${{ steps.release.outputs.pr.number }}
-
-      # - uses: "pascalgn/automerge-action@v0.15.5"
-      #   name: automerge
-      #   id: automerge
-      #   env:
-      #     GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
-      #     MERGE_LABELS: automerge
+      # - uses: reitermarkus/automerge@v2
+      #   if: "${{ steps.release.outputs.pr }}"
+      #   with:
+      #     token: ${{ secrets.GHA_TOKEN }}
+      #     required-labels: automerge
+      #     pull-request: ${{ steps.release.outputs.pr.number }}
