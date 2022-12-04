@@ -16,13 +16,17 @@ jobs:
           version-file: lib/foo/version.rb
 
       - uses: actions/github-script@v6
+        env:
+          PR_NUMBER: ${{ steps.release.outputs.pr.number }}
+          TAG_NAME: ${{ steps.release.outputs.tag_name }}
         with:
           script: |
+            const { PR_NUMBER, TAG_NAME } = process.env
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: ${{ steps.release.outputs.pr.number }},
-              commit_title: 'chore(release): ${{ steps.release.outputs.tag_name }} [skip ci]',
+              pull_number: ${PR_NUMBER},
+              commit_title: 'chore(release): ${TAG_NAME} [skip ci]',
             })
 
       # - uses: actions/github-script@v6
