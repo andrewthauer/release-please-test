@@ -16,15 +16,13 @@ jobs:
           version-file: lib/foo/version.rb
 
       - uses: actions/github-script@v6
+        if: "${{ steps.release.outputs.pr }}"
         env:
           PR_NUMBER: ${{ steps.release.outputs.pr.number }}
           TAG_NAME: ${{ steps.release.outputs.tag_name }}
         with:
           script: |
             const { PR_NUMBER, TAG_NAME } = process.env
-
-            console.log(PR_NUMBER, TAG_NAME)
-
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
