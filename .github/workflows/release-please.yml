@@ -23,7 +23,7 @@ jobs:
         with:
           script: |
             github.rest.issues.addLabels({
-              issue_number: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }},
+              issue_number: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}",
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ["automerge"],
@@ -32,7 +32,7 @@ jobs:
             github.rest.pulls.createReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }},
+              pull_number: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}",
               event: 'APPROVE',
             });
 
