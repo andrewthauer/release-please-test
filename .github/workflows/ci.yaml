@@ -4,11 +4,29 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    name: CI
     if: "${{ github.event.label.name != 'autorelease: tagged' }}"
+    name: CI
     steps:
       - uses: actions/checkout@v2
 
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Commit Lint
+        run: |
+          pip install pre-commit
+          YELLOW="\033[33m"
+          NC="\033[0m"
+          mkdir -p tmp/pre-commit
+          COMMIT_MSG_FILENAME=tmp/pre-commit/last-commit-msg
+          git log --format="%B" -n 1 >| $COMMIT_MSG_FILENAME
+          if ! pre-commit run --all-files --hook-stage commit-msg --commit-msg-filename $COMMIT_MSG_FILENAME; then
+            echo "💡 ${YELLOW} Run bin/setup locally to install pre-commit hooks${NC}"
+            exit 1
+          fi
+          rm $COMMIT_MSG_FILENAME

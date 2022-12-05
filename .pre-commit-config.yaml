@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.37.1
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+      - id: commitizen-branch
+        stages: [push]
+
+  - repo: https://github.com/mattlqx/pre-commit-ruby
+    rev: v1.3.5
+    hooks:
+      - id: rubocop
+      - id: rspec
