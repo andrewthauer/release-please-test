@@ -15,28 +15,15 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
 
-      # - uses: actions/github-script@v6
-      #   if: "${{ steps.release.outputs.pr }}"
-      #   env:
-      #     PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
-      #   with:
-      #     script: |
-      #       github.rest.pulls.merge({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         pull_number: process.env.PR_NUMBER,
-      #         merge_method: 'squash'
-      #       })
-
       - uses: actions/github-script@v6
-        id: update-pr
+        id: prep-release-pr
         if: "${{ steps.release.outputs.pr }}"
-        env:
-          PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
+        # env:
+        #   PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
         with:
           script: |
             github.rest.issues.addLabels({
-              issue_number: process.env.PR_NUMBER,
+              issue_number: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }},
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ["automerge"],
@@ -45,30 +32,14 @@ jobs:
             github.rest.pulls.createReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: process.env.PR_NUMBER,
+              pull_number: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }},
               event: 'APPROVE',
             });
 
-      # - uses: reitermarkus/automerge@v2
-      #   if: "${{ steps.release.outputs.pr }}"
-      #   with:
-      #     token: ${{ secrets.GHA_TOKEN }}
-      #     required-labels: automerge
-      #     pull-request: ${{ steps.release.outputs.pr.number }}
-
-      # - uses: pascalgn/automerge-action@v0.15.5
-      #   id: automerge
-      #   if: "${{ steps.release.outputs.pr }}"
-      #   env:
-      #     GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
-      #     MERGE_LABELS: "automerge"
-      #     MERGE_REMOVE_LABELS: "automerge"
-      #     MERGE_METHOD: "squash"
-      #     # MERGE_COMMIT_MESSAGE: "pull-request-description"
-      #     # MERGE_FORKS: "false"
-      #     MERGE_RETRIES: "6"
-      #     MERGE_RETRY_SLEEP: "10000"
-      #     MERGE_REQUIRED_APPROVALS: "0"
-      #     # UPDATE_LABELS: ""
-      #     UPDATE_METHOD: "rebase"
-      #     PULL_REQUEST: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}"
+      - uses: reitermarkus/automerge@v2
+        id: automerge
+        if: "${{ steps.release.outputs.pr }}"
+        with:
+          token: ${{ secrets.GHA_TOKEN }}
+          required-labels: automerge
+          pull-request: ${{ steps.release.outputs.pr.number }}
