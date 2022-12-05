@@ -15,24 +15,18 @@ jobs:
           package-name: foo
           version-file: lib/foo/version.rb
 
-      # - if: "${{ steps.release.outputs.pr }}"
+      # - uses: actions/github-script@v6
+      #   if: "${{ steps.release.outputs.pr }}"
       #   env:
       #     PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
-      #   run: |
-      #     echo "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}"
-      #     echo "${PR_NUMBER}"
-
-      - uses: actions/github-script@v6
-        if: "${{ steps.release.outputs.pr }}"
-        env:
-          PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
-        with:
-          script: |
-            github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: process.env.PR_NUMBER,
-            })
+      #   with:
+      #     script: |
+      #       github.rest.pulls.merge({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         pull_number: process.env.PR_NUMBER,
+      #         merge_method: 'squash'
+      #       })
 
       # - uses: actions/github-script@v6
       #   with:
@@ -44,9 +38,9 @@ jobs:
       #         labels: ["automerge"]
       #       })
 
-      # - uses: reitermarkus/automerge@v2
-      #   if: "${{ steps.release.outputs.pr }}"
-      #   with:
-      #     token: ${{ secrets.GHA_TOKEN }}
-      #     required-labels: automerge
-      #     pull-request: ${{ steps.release.outputs.pr.number }}
+      - uses: reitermarkus/automerge@v2
+        if: "${{ steps.release.outputs.pr }}"
+        with:
+          token: ${{ secrets.GHA_TOKEN }}
+          # required-labels: automerge
+          pull-request: ${{ steps.release.outputs.pr.number }}
