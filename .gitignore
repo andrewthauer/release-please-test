@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/vendor/
+/tmp/
+.DS_Store
+.idea
+.byebug_history
+.rspec_status
+*.gem
+*.pid

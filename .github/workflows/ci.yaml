@@ -7,13 +7,13 @@ jobs:
     if: "${{ github.event.label.name != 'autorelease: tagged' }}"
     name: CI
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
@@ -30,3 +30,7 @@ jobs:
             exit 1
           fi
           rm $COMMIT_MSG_FILENAME
+
+      - run: bundle exec rubocop
+
+      - run: bundle exec rspec
