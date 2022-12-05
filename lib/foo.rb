@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Foo
-  puts 'foobar'
-  puts 'foobar'
+  puts 'foo'
 end
+
+require_relative 'foo/bar'
