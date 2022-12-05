@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.0](https://github.com/andrewthauer/release-please-test/compare/v0.21.0...v0.22.0) (2022-12-05)
+
+
+### Features
+
+* new release ([#90](https://github.com/andrewthauer/release-please-test/issues/90)) ([bde4e7f](https://github.com/andrewthauer/release-please-test/commit/bde4e7f994f2a49d346829d9e9f7510058e3cf25))
+
 ## [0.21.0](https://github.com/andrewthauer/release-please-test/compare/v0.20.0...v0.21.0) (2022-12-05)
 
 
