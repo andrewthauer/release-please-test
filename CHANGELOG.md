@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.25.0](https://github.com/andrewthauer/release-please-test/compare/v0.24.0...v0.25.0) (2022-12-05)
+
+
+### Features
+
+* new release ([#96](https://github.com/andrewthauer/release-please-test/issues/96)) ([24f2c13](https://github.com/andrewthauer/release-please-test/commit/24f2c13e26f24cf362642bb730cc380cbcf55807))
+* new release ([#98](https://github.com/andrewthauer/release-please-test/issues/98)) ([4b3c2e1](https://github.com/andrewthauer/release-please-test/commit/4b3c2e1878186bde4cbb03814a3548e981ac37e7))
+* new release ([#99](https://github.com/andrewthauer/release-please-test/issues/99)) ([c82aca6](https://github.com/andrewthauer/release-please-test/commit/c82aca6b03b5770c8e5d129a86b9b0262f8b6115))
+
 ## [0.24.0](https://github.com/andrewthauer/release-please-test/compare/v0.23.0...v0.24.0) (2022-12-05)
 
 
