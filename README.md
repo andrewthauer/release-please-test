@@ -1,7 +1,7 @@
 # Release Please Test
 
 Small demo test repo for
-[release-plase](https://github.com/googleapis/release-please) with Ruby to
+[release-please](https://github.com/googleapis/release-please) with Ruby to
 simulate the behaviour of
 [semantic-release](https://github.com/semantic-release/semantic-release). This
 means when a feature branch PR is merged, it will automatically create a release
