@@ -29,6 +29,7 @@ jobs:
       #       })
 
       - uses: actions/github-script@v6
+        id: label-pr
         if: "${{ steps.release.outputs.pr }}"
         env:
           PR_NUMBER: ${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}
@@ -41,9 +42,25 @@ jobs:
               labels: ["automerge"]
             })
 
-      - uses: reitermarkus/automerge@v2
-        if: "${{ steps.release.outputs.pr }}"
-        with:
-          token: ${{ secrets.GHA_TOKEN }}
-          required-labels: automerge
-          pull-request: ${{ steps.release.outputs.pr.number }}
+      # - uses: reitermarkus/automerge@v2
+      #   if: "${{ steps.release.outputs.pr }}"
+      #   with:
+      #     token: ${{ secrets.GHA_TOKEN }}
+      #     required-labels: automerge
+      #     pull-request: ${{ steps.release.outputs.pr.number }}
+
+      - uses: pascalgn/automerge-action@v0.15.5
+        id: automerge
+        env:
+          GITHUB_TOKEN: "${{ secrets.GHA_TOKEN }}"
+          MERGE_LABELS: "automerge"
+          MERGE_REMOVE_LABELS: "automerge"
+          MERGE_METHOD: "squash"
+          # MERGE_COMMIT_MESSAGE: "pull-request-description"
+          # MERGE_FORKS: "false"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_REQUIRED_APPROVALS: "1"
+          # UPDATE_LABELS: ""
+          UPDATE_METHOD: "rebase"
+          PULL_REQUEST: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}"
