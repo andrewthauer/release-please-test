@@ -24,5 +24,5 @@ pre-commit install -t pre-commit -t commit-msg
 The following will execute a new release
 
 ```sh
-gco -b feature-1 && git add . && g ci --allow-empty -m "feat: new release" && g pushu && gh pr create -f && gh pr merge --admin
+gco -b some-feat && git add . && g ci --allow-empty -m "feat: new release" && git push -u origin some-feat && gh pr create -f && gh pr merge --admin
 ```
