@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.15.0](https://github.com/andrewthauer/release-please-test/compare/v0.14.0...v0.15.0) (2022-12-05)
+
+
+### Features
+
+* release 37 ([#57](https://github.com/andrewthauer/release-please-test/issues/57)) ([11050f3](https://github.com/andrewthauer/release-please-test/commit/11050f3c71bace6f076e9956a83a50a2167cfc7b))
+* release 38 ([#59](https://github.com/andrewthauer/release-please-test/issues/59)) ([6ecc51e](https://github.com/andrewthauer/release-please-test/commit/6ecc51e96af02c5198702601bca8b0d85c7c7de8))
+* release 39 ([#60](https://github.com/andrewthauer/release-please-test/issues/60)) ([1fb60bb](https://github.com/andrewthauer/release-please-test/commit/1fb60bbd9a69540bc607c67f7e2b9b76bbe653e0))
+* release 40 ([#61](https://github.com/andrewthauer/release-please-test/issues/61)) ([9e45e86](https://github.com/andrewthauer/release-please-test/commit/9e45e86cab16611861aea2793359febcccc52f47))
+* release 41 ([#62](https://github.com/andrewthauer/release-please-test/issues/62)) ([c527c57](https://github.com/andrewthauer/release-please-test/commit/c527c574bb1c4844d2d9e3a1733b29baf42f6c9c))
+* release 42 ([#63](https://github.com/andrewthauer/release-please-test/issues/63)) ([d063e1c](https://github.com/andrewthauer/release-please-test/commit/d063e1c9e144bd27725067e4f4a917fda4ea4e97))
+* release 43 ([#64](https://github.com/andrewthauer/release-please-test/issues/64)) ([33e6488](https://github.com/andrewthauer/release-please-test/commit/33e6488093b02485f8e39de5f9195e3128e58574))
+* release 44 ([#65](https://github.com/andrewthauer/release-please-test/issues/65)) ([186f4d4](https://github.com/andrewthauer/release-please-test/commit/186f4d41f7ffabb6e37efdd1501a72420a305dcf))
+* release 45 ([#66](https://github.com/andrewthauer/release-please-test/issues/66)) ([a06a212](https://github.com/andrewthauer/release-please-test/commit/a06a212711e0d56678f26f4575990627acd12024))
+* release 46 ([#67](https://github.com/andrewthauer/release-please-test/issues/67)) ([da9bd58](https://github.com/andrewthauer/release-please-test/commit/da9bd5854bf9bcd3a24fab8182a03b48155eca49))
+* release 47 ([#68](https://github.com/andrewthauer/release-please-test/issues/68)) ([88160b8](https://github.com/andrewthauer/release-please-test/commit/88160b8c46689220f18c9be503891da1c56b7c6b))
+* release 48 ([#69](https://github.com/andrewthauer/release-please-test/issues/69)) ([b93ce5e](https://github.com/andrewthauer/release-please-test/commit/b93ce5ec70afb5f0cb6fc19fbecac45eedee8cc9))
+* release 49 ([#70](https://github.com/andrewthauer/release-please-test/issues/70)) ([814035e](https://github.com/andrewthauer/release-please-test/commit/814035e86b2ba820c3162565c56baf8959822999))
+* release 50 ([#71](https://github.com/andrewthauer/release-please-test/issues/71)) ([5db6c7c](https://github.com/andrewthauer/release-please-test/commit/5db6c7c2f9350519ac065d549e35bc892c643bf4))
+
 ## [0.14.0](https://github.com/andrewthauer/release-please-test/compare/v0.13.0...v0.14.0) (2022-12-04)
 
 
