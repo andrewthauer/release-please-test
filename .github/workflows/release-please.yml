@@ -19,11 +19,9 @@ jobs:
         # env:
         #   PR_NUMBER: ${{ steps.release.outputs.pr.number }}
         run: |
-          echo "${{ fromJson(steps.release.outputs.pr) }}"
-          echo "Number: ${{ fromJson(steps.release.outputs.pr).number }}"
-          echo "Number: ${{ fromJson(steps.release.outputs.pr.number) }}"
-          echo "Number: ${{ steps.release.outputs.pr.number }}"
-          echo "${{ steps.release.outputs.pr }}"
+          echo "${{ toJSON(steps.release.outputs.pr) }}"
+          echo "${{ fromJSON(steps.release.outputs.pr) }}"
+          echo "${{ steps.release.outputs.pr.number }}"
 
       # - uses: actions/github-script@v6
       #   if: "${{ steps.release.outputs.pr }}"
