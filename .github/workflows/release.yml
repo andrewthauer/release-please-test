@@ -22,7 +22,8 @@ jobs:
       - uses: actions/checkout@v3
         if: "${{ steps.release.outputs.pr }}"
         with:
-          ref: "${{ steps.release.outputs.pr.headBranchName }}"
+          # ref: "${{ steps.release.outputs.pr.headBranchName }}"
+          ref: release-please--branches--main--components--foo
 
       - uses: ruby/setup-ruby@v1
         if: "${{ steps.release.outputs.pr }}"
