@@ -37,11 +37,3 @@ jobs:
               pull_number: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}",
               event: 'APPROVE',
             });
-
-      - uses: reitermarkus/automerge@v2
-        id: automerge
-        if: "${{ steps.release.outputs.pr }}"
-        with:
-          token: ${{ secrets.GHA_TOKEN }}
-          required-labels: automerge
-          pull-request: ${{ steps.release.outputs.pr.number }}
