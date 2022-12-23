@@ -1,0 +1,49 @@
+# If a PR changes the version or Gemfile, this
+# will update the Gemfile.lock.
+#
+# Mostly useful for release PRs.
+name: on_release_pr
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - lib/**/version.rb
+      - Gemfile
+      - '*.gemspec'
+      - '!Gemfile.lock'
+
+jobs:
+  update-gemfile-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # - name: Configure git
+      #   uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      #   with:
+      #     token: ${{ secrets.GHA_TOKEN }}
+
+      - name: Update Gemfile.lock
+        run: |
+          # `bundler-cache: true` puts us in deployment mode.
+          # We can't update the Gemfile.lock in deployment mode.
+          bundle config unset deployment
+          bundle install
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'chore: update Gemfile.lock'
+
+      - uses: reitermarkus/automerge@v2
+        id: automerge
+        # if: "${{ steps.release.outputs.pr }}"
+        with:
+          token: ${{ secrets.GHA_TOKEN }}
+          required-labels: automerge
+          pull-request: ${{ steps.release.outputs.pr.number }}
