@@ -24,7 +24,7 @@ jobs:
         with:
           ref: "${{ steps.release.outputs.pr.sha }}"
 
-      - uses: ruby/setup-ruby@v3
+      - uses: ruby/setup-ruby@v1
         if: "${{ steps.release.outputs.pr }}"
         with:
           bundler-cache: true
