@@ -13,6 +13,19 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Update Gemfile.lock
+        if: "${{ github.ref == 'release-please--branches--main--components--foo' }}"
+        run: |
+          # `bundler-cache: true` puts us in deployment mode.
+          # We can't update the Gemfile.lock in deployment mode.
+          bundle config unset deployment
+          bundle install
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: "${{ github.ref == 'release-please--branches--main--components--foo' }}"
+        with:
+          commit_message: 'chore: update Gemfile.lock'
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
