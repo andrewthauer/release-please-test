@@ -27,6 +27,8 @@ jobs:
         with:
           script: |
             const { PR_NUMBER } = process.env;
+            console.log("the PR number is " + PR_NUMBER)
+
             github.rest.issues.addLabels({
               issue_number: PR_NUMBER,
               owner: context.repo.owner,
