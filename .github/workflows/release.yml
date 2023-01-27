@@ -22,11 +22,11 @@ jobs:
       - uses: actions/github-script@v6
         id: prep-release-pr
         if: ${{ steps.release.outputs.pr }}
-        env:
-          PR_NUMBER: ${{ toJSON(fromJSON(steps.test.outputs.pr).number) }}
+        # env:
+        #   PR_NUMBER: ${{ toJSON(fromJSON(steps.test.outputs.pr).number) }}
         with:
           script: |
-            const { PR_NUMBER } = process.env;
+            const PR_NUMBER = "${{ toJSON(fromJSON(steps.test.outputs.pr).number) }}"
 
             github.rest.issues.addLabels({
               issue_number: PR_NUMBER,
