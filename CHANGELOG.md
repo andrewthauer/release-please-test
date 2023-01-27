@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.27.0](https://github.com/andrewthauer/release-please-test/compare/v0.26.0...v0.27.0) (2023-01-27)
+
+
+### Features
+
+* new release ([#120](https://github.com/andrewthauer/release-please-test/issues/120)) ([f460284](https://github.com/andrewthauer/release-please-test/commit/f46028412f6b026f9d236f0a51ff36d6aa14d4e1))
+* new release ([#121](https://github.com/andrewthauer/release-please-test/issues/121)) ([5654a5d](https://github.com/andrewthauer/release-please-test/commit/5654a5dc077c1619587982ba6b688d0d9b8d67e9))
+* new release ([#122](https://github.com/andrewthauer/release-please-test/issues/122)) ([82c909c](https://github.com/andrewthauer/release-please-test/commit/82c909c831822e35715e450a6af6c0da41677a28))
+* new release ([#123](https://github.com/andrewthauer/release-please-test/issues/123)) ([906898c](https://github.com/andrewthauer/release-please-test/commit/906898c4d28eaa9f5d41f8763c67ccad10bdda86))
+* new release ([#125](https://github.com/andrewthauer/release-please-test/issues/125)) ([6acd2db](https://github.com/andrewthauer/release-please-test/commit/6acd2db65caca3ae8be35d2b2b39ee066626fdee))
+* new release ([#127](https://github.com/andrewthauer/release-please-test/issues/127)) ([03aaae5](https://github.com/andrewthauer/release-please-test/commit/03aaae5a3a264b8defb092262d8dcbe110b3a19b))
+* new release ([#128](https://github.com/andrewthauer/release-please-test/issues/128)) ([272907b](https://github.com/andrewthauer/release-please-test/commit/272907bdf15daa148d3cb75ce924dd358bf332fc))
+* new release ([#129](https://github.com/andrewthauer/release-please-test/issues/129)) ([3ca3218](https://github.com/andrewthauer/release-please-test/commit/3ca32180b442ec196cb16a458c895811aee2c06c))
+* new release ([#130](https://github.com/andrewthauer/release-please-test/issues/130)) ([887c1d0](https://github.com/andrewthauer/release-please-test/commit/887c1d00b4ce36580f960d60bf8e0a96882bb9cc))
+* new release ([#131](https://github.com/andrewthauer/release-please-test/issues/131)) ([9904e93](https://github.com/andrewthauer/release-please-test/commit/9904e930dd9d56e0fa77c1efcead336b8be16219))
+
 ## [0.26.0](https://github.com/andrewthauer/release-please-test/compare/v0.25.0...v0.26.0) (2023-01-14)
 
 
