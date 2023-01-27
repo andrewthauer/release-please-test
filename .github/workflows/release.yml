@@ -22,8 +22,6 @@ jobs:
       - uses: actions/github-script@v6
         id: prep-release-pr
         if: ${{ steps.release.outputs.pr }}
-        # env:
-        #   PR_NUMBER: ${{ toJSON(fromJSON(steps.test.outputs.pr).number) }}
         with:
           script: |
             github.rest.issues.addLabels({
