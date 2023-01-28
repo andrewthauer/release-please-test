@@ -1,5 +1,7 @@
 on:
   push:
+    tags-ignore:
+      - '**'
 
 jobs:
   ci:
@@ -8,6 +10,10 @@ jobs:
     name: CI
     steps:
       - uses: actions/checkout@v3
+
+      - name: Debug
+        run: |
+          echo "Label name: ${{ github.event.label.name }}"
 
       - uses: ruby/setup-ruby@v1
         with:
