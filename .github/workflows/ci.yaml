@@ -12,7 +12,7 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    # if: "${{ github.event.label.name != 'autorelease: tagged' }}"
+    if: "${{ !(github.event.ref == 'refs/heads/main' && startsWith(github.event.head_commit.message, 'chore(main): release v')) }}"
     name: CI
     steps:
       - uses: actions/checkout@v3
@@ -22,10 +22,7 @@ jobs:
         with:
           script: |
             const event = `${{ toJSON(github.event) }}`;
-            # console.log(event);
-            const isMainBranch = github.event.ref === 'refs/heads/main' || github.event.ref === 'refs/heads/master'
-            const isReleaseCommit = github.event.head_commit.message.startsWith('chore(main): release v')
-            console.log(isMainBranch, isReleaseCommit);
+            console.log(event);
 
       - uses: ruby/setup-ruby@v1
         with:
