@@ -1,7 +1,9 @@
 on:
   push:
-    tags-ignore:
+    branches:
       - '**'
+    tags-ignore:
+      - 'v*'
 
 jobs:
   ci:
