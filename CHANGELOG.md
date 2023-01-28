@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.38.0](https://github.com/andrewthauer/release-please-test/compare/v0.37.0...v0.38.0) (2023-01-28)
+
+
+### Features
+
+* **foo:** add some feature ([#157](https://github.com/andrewthauer/release-please-test/issues/157)) ([a95c3e0](https://github.com/andrewthauer/release-please-test/commit/a95c3e0ecda931b1bd7ea67eaf7195d014d1189d))
+
 ## [0.37.0](https://github.com/andrewthauer/release-please-test/compare/v0.36.0...v0.37.0) (2023-01-28)
 
 
