@@ -15,7 +15,7 @@ jobs:
 
       - name: Debug
         run: |
-          echo "Label name: ${{ github.event.label.name }}"
+          echo "${{ github.event }}"
 
       - uses: ruby/setup-ruby@v1
         with:
