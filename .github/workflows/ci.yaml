@@ -17,9 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Debug
-        run: |
-          echo "${{ github.event }}"
+      - uses: actions/github-script@v6
+        id: debug
+        with:
+          script: |
+            const event = `${{ toJSON(github.event) }}`;
+            console.log(event);
 
       - uses: ruby/setup-ruby@v1
         with:
