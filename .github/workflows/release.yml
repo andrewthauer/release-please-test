@@ -26,10 +26,10 @@ jobs:
         #   PR_NUMBER: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}"
         with:
           script: |
-            const { PR_NUMBER } = "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}";
+            const prNumber = "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}";
 
             github.rest.issues.addLabels({
-              issue_number: PR_NUMBER,
+              issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ["automerge"],
@@ -38,7 +38,7 @@ jobs:
             github.rest.pulls.createReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: PR_NUMBER,
+              pull_number: prNumber,
               event: 'APPROVE',
             });
 
