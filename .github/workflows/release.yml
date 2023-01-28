@@ -13,7 +13,6 @@ jobs:
         id: release
         with:
           token: "${{ secrets.GHA_TOKEN }}"
-          # pull-request-title-pattern: "chore${scope}: release${component} ${version}"
           release-type: ruby
           package-name: foo
           version-file: lib/foo/version.rb
@@ -23,8 +22,6 @@ jobs:
       - uses: actions/github-script@v6
         id: prep-release-pr
         if: ${{ steps.release.outputs.pr }}
-        # env:
-        #   PR_NUMBER: "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}"
         with:
           script: |
             const prNumber = "${{ toJSON(fromJSON(steps.release.outputs.pr).number) }}";
