@@ -13,6 +13,7 @@ jobs:
         id: release
         with:
           token: "${{ secrets.GHA_TOKEN }}"
+          # pull-request-title-pattern: "chore${scope}: release${component} ${version}"
           release-type: ruby
           package-name: foo
           version-file: lib/foo/version.rb
